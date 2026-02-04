@@ -19,6 +19,9 @@ fn main() {
 			return;
 		},
 	};
-	minigrepv2::find_and_print(wordd, &content)
+let output =	minigrepv2::find_and_print(wordd, &content);
+for toprint in output {
+	println!("{toprint}");
+}
 	}
  }
