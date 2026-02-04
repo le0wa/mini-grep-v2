@@ -8,13 +8,15 @@ pub fn read(drct: &str) -> Result<String, Box<dyn std::error::Error>> {
 }
 
 
-pub fn find_and_print(word: &str, content: &str) {
+pub fn find_and_print<'a>(word: &'a str, content: &'a str) -> Vec<&'a str> {
 	let content2 = content.lines();
+	let mut vector2 = Vec::new();
 	for line in content2 {
 		if line.contains(word) {
-			println!("{line}");
+			vector2.push(line);
 		}
 	}
+	vector2
 }
 
 
